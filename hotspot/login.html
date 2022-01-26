@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internet hotspot - Log in</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- two other colors
+
+<body class="lite">
+<body class="dark">
+
+-->
+    <div class="menus">
+        <nav>
+            <img src="./img/menu-mobile.png" alt="menu-mobile" class="menu-mobile">
+
+            <div class="navbar-left">
+                <img src="./img/yumka_blanco.png" alt="logo-menu" class="logo-menu">
+                <ul>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Recorrido</a>
+                    </li>
+                    <li>
+                        <a href="/">Horarios</a>
+                    </li>
+                    <li>
+                        <a href="/">Costos</a>
+                    </li>
+                    <li>
+                        <a href="/">Reglamento</a>
+                    </li>
+                    <li>
+                        <a href="/">Buz&oacuten</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <ul>
+                    <li class="navbar-web"><a href="http://yumka.gob.mx">yumka.gob.mx</a></li>
+                    <li class="navbar-wifi">
+                        <img src="./img/logo-wifi.png" alt="Conectarse">
+                    </li>
+                </ul>                
+            </div>
+        </nav>
+    </div>
+
+    <div class="tucan-izq">
+        <img src="./img/tucan_izq.png" alt="tucan_izq">
+    </div>
+
+    <div class="desktop-menu">
+        <ul>
+            <li>
+                <a href="/" class="title">Soy visitante</a>
+            </li>
+            <li>
+                <a href="/" class="title">Soy personal del Yumka'</a>
+            </li>
+            <li>
+                <a href="/" class="title">yumka.gob.mx</a>
+            </li>
+        </ul>   
+    </div>
+
+    <div class="ie-fixMinHeight">        
+        <div class="main">
+
+            $(if chap-id)
+                <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+                    <input type="hidden" name="username" />
+                    <input type="hidden" name="password" />
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                </form>
+
+                <script src="/md5.js"></script>
+                <script>
+                    function doLogin() {
+                        document.sendin.username.value = document.login.username.value;
+                        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+                        document.sendin.submit();
+                        return false;
+                    }
+                </script>
+            $(endif)
+
+            <div class="wrap animated fadeIn">
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    <img class="logo" src="./img/letras_yumka_anp.png">
+                    <!--<svg class="logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 42">
+                        <path fill="#fff" d="M7.32 13.66L0 41.74 3.12 41.74 9.49 15.94 9.58 15.94 15.01 41.74 18.22 41.74 36.86 16.34 36.95 16.34 30.02 41.74 33.18 41.74 40.4 13.66 35.73 13.66 17.23 38.87 11.99 13.66 7.32 13.66zM43.43 21.45L38.19 41.74 41.16 41.74 46.4 21.45 43.43 21.45zM50.68 21.45L45.5 41.74 48.47 41.74 50.36 34.39 55.55 30.77 62.02 41.74 65.27 41.74 57.91 29.28 69.43 21.45 65.46 21.45 51.21 31.36 51.12 31.28 53.66 21.45 50.68 21.45z" />
+                        <path d="M71.18 21.45L65.94 41.74h3l2.74-10.62c1-3.81 3.82-7.39 9.16-7.47.56 0 1.13 0 1.7 0l.66-2.48c-.52 0-1.09 0-1.61 0-4.34 0-6.94 2-8.82 5h-.1l1.23-4.68zM103.8 28.8c0-5-4-7.94-9.63-7.94-8.69 0-13.59 6.37-13.59 13 0 5.07 3.44 8.45 9.72 8.45 9 0 13.5-6.68 13.5-13.53m-3 .52c0 4.72-3.44 10.93-9.95 10.93-5 0-7.32-2.68-7.32-6.61 0-4.76 3.59-10.7 10.1-10.7 4.77 0 7.17 2.6 7.17 6.38M132.33 21.43L134.26 13.66 105.19 13.66 103.27 21.45 112.59 21.45 112.59 21.45 122.99 21.45 122.99 21.45 132.33 21.43zM111.67 25.17L107.55 41.74 117.93 41.74 122.06 25.17 122.06 25.16 111.67 25.16 111.67 25.17zM134 25.17l-4.11 16.57h9.35l4.1-16.57zm10.28-3.73l1.94-7.78h-9.34l-2 7.79zM150.09 13.66L143.11 41.74 152.45 41.74 153.91 35.92 156.04 34.34 159.34 41.74 169.49 41.74 163.26 29.55 174.26 21.33 163.07 21.33 156.18 27.3 156.09 27.3 159.44 13.66 150.09 13.66zM47.45 0c1.14 7.93 5.39 12.74 14.07 13.14A10.69 10.69 0 0 1 47.45 0" fill="#fff" fill-rule="evenodd" />
+                        <path d="M42.91,1.4c.1,0,.11,0,.12.11A16.55,16.55,0,0,0,48.26,13a16.6,16.6,0,0,0,12,4.66c-10,4-20.55-5.6-17.33-16.28" fill="#fff" fill-rule="evenodd" /></svg>-->
+
+                    <p class="info $(if error)alert$(endif)">
+                        $(if error == "")Por favor introduzca su datos de acceso $(if trial == 'yes')<br/><!--<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Eres del &aacute;rea administrativa</a>-->.$(endif)
+                        $(endif)
+
+                        $(if error)$(error)$(endif)
+                    </p>
+
+                    <p class="info-select">
+                        Selecciona una opci&oacuten para conectarte a la red inalambrica:
+                    </p>
+
+                    <button id="boton-admin" type="button" class="primary-button" onclick="button_admin()">
+                        Soy parte del Yumka'
+                    </button>
+
+                    <button id="boton-visit" type="submit" class="primary-button" onclick="button_visit()">
+                        Soy un visitante
+                    </button>
+                    
+                    <label>
+                        <!--<img class="ico" src="img/user.svg" alt="#" />-->
+                        <svg class="ico" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user fa-w-14" viewBox="0 0 448 512">
+                            <path fill="#464646" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/>
+                        </svg>
+                        <input name="username" type="text" id= "user" value="$(username)" placeholder="Usuario" />
+                    </label>
+
+                    <label>
+                        <!--<img class="ico" src="img/password.svg" alt="#" />-->
+                        <svg class="ico" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="fas" data-icon="key" class="svg-inline--fa fa-key fa-w-16" viewBox="0 0 512 512">
+                            <path fill="#464646" d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z"/>
+                        </svg>
+                        <input name="password" type="password" id= "pass" placeholder="*******" />
+                    </label>
+
+                    <input id="boton-submit" type="submit" value="Conectarse" />
+
+                    <button id="boton-option" type="button" class="primary-button" onclick="button_option()">
+                        Ver opci&oacuten anterior
+                    </button>
+
+                </form>
+                <p class="info bt">Wifi otorgado por Yumka'</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="./yumka.js"></script>
+</html>

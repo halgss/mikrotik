@@ -336,7 +336,7 @@ input[type=password]:focus,input[type=text]:focus{
 input[type=password]:focus,input[type=text]:focus{
     background-color: var(--verde-claro1);
 }
-
+*/
 .bt{
     opacity:.6;
 }
@@ -355,16 +355,18 @@ input[type=password]:focus,input[type=text]:focus{
     margin-bottom: 10px;
 }
 
+/*
 #boton-admin:hover{
     background: var(--verde-claro);
     color: var(--colortext);
 }
+*/
 
 #boton-visit:hover{
     background: var(--verde-claro);
     color: var(--colortext);
 }
-
+/*
 #boton-option:hover{
     background: var(--verde-claro);
     color: var(--colortext);
@@ -375,6 +377,8 @@ input[type=password]:focus,input[type=text]:focus{
     margin-top: 10px;
     display: none;
 }
+*/
+
 
 input[type=submit]{
     background: var(--verde);
@@ -394,7 +398,7 @@ input[type=submit]:focus,input[type=submit]:hover{
     background: var(--verde-claro);
     color: var(--colortext);
 }
-
+/*
 #boton-logout{
  display: block;   
 }
@@ -666,13 +670,14 @@ body{
     display: grid;     
     grid-template-columns: auto auto auto;
     grid-template-rows: 3.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem; 
 }
 
 .item div:first-child div{
     font-size: var(--md);
     font-weight: 200;
     font-family: var(--font);    
-    padding: 0.5rem 0 0 0.5rem; 
+    padding: 0rem 0 0 0.5rem; 
 }
 
 .item div:first-child{    
@@ -681,8 +686,7 @@ body{
 }
 
 .item div:last-child{
-    text-align: end;
-    padding: 0.5rem 0.5rem 0 0; 
+    text-align: end; 
 }
 
 .r3{    
@@ -862,10 +866,10 @@ background-position-y: 50%;
 .r6 div:nth-child(3) {
 width: 100%;
 height: 100%;
-background-image: url(/hotspot/img/jaguar1.jpg);
+background-image: url(/hotspot/img/tigre.jpg);
 background-size: cover;
 background-repeat: no-repeat;
-background-position-y: 30%;
+background-position-y: 50%;
 }
 .r6 {    
     margin: 10px 0px 20px 0px;

@@ -18,177 +18,6 @@
 
 <body>
 
-<!-- Codigo mikrotik
-    <div class="menus">
-        <nav>
-            <img src="./img/menu-mobile.png" alt="menu-mobile" class="menu-mobile">
-
-            <div class="navbar-left">
-                <img src="./img/yumka_blanco.png" alt="logo-menu" class="logo-menu">
-                <ul>
-                    <li>
-                        <a href="/">All</a>
-                    </li>
-                    <li>
-                        <a href="/">Recorrido</a>
-                    </li>
-                    <li>
-                        <a href="/">Horarios</a>
-                    </li>
-                    <li>
-                        <a href="/">Costos</a>
-                    </li>
-                    <li>
-                        <a href="/">Reglamento</a>
-                    </li>
-                    <li>
-                        <a href="/">Buz&oacuten</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="navbar-right">
-                <ul>
-                    <li class="navbar-web"><a href="http://yumka.gob.mx">yumka.gob.mx</a></li>
-                    <li class="navbar-wifi">
-                        <img src="./img/logo-wifi.png" alt="Conectarse">
-                    </li>
-                </ul>                
-            </div>
-        </nav>
-    </div>
-
-    <div class="tucan-izq">
-        <img src="./img/tucan_izq.png" alt="tucan_izq">
-    </div>
-
-    <div class="desktop-menu">
-        <ul>
-            <li>
-                <a href="/" class="title">Soy visitante</a>
-            </li>
-            <li>
-                <a href="/" class="title">Soy personal del Yumka'</a>
-            </li>
-            <li>
-                <a href="/" class="title">yumka.gob.mx</a>
-            </li>
-        </ul>   
-    </div>
-
-    <div class="ie-fixMinHeight">        
-        <div class="main">
-
-            $(if chap-id)
-                <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
-                    <input type="hidden" name="username" />
-                    <input type="hidden" name="password" />
-                    <input type="hidden" name="dst" value="$(link-orig)" />
-                    <input type="hidden" name="popup" value="true" />
-                </form>
-
-                <script src="/md5.js"></script>
-                <script>
-                    function doLogin() {
-                        document.sendin.username.value = document.login.username.value;
-                        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-                        document.sendin.submit();
-                        return false;
-                    }
-                </script>
-            $(endif)
-
-            <div class="wrap animated fadeIn">
-                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
-                    <input type="hidden" name="dst" value="$(link-orig)" />
-                    <input type="hidden" name="popup" value="true" />
-                    <img class="logo" src="./img/letras_yumka_anp.png">
-                    
-
-                    <p class="info $(if error)alert$(endif)">
-                        $(if error == "")Por favor introduzca su datos de acceso $(if trial == 'yes')<br/>.$(endif)
-                        $(endif)
-
-                        $(if error)$(error)$(endif)
-                    </p>
-
-                    <p class="info-select">
-                        Selecciona una opci&oacuten para conectarte a la red inalambrica:
-                    </p>
-
-                    <button id="boton-admin" type="button" class="primary-button" onclick="button_admin()">
-                        Soy parte del Yumka'
-                    </button>
-
-                    <button id="boton-visit" type="submit" class="primary-button" onclick="button_visit()">
-                        Soy un visitante
-                    </button>
-                    
-                    <label>
-                        
-                        <svg class="ico" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user fa-w-14" viewBox="0 0 448 512">
-                            <path fill="#464646" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/>
-                        </svg>
-                        <input name="username" type="text" id= "user" value="$(username)" placeholder="Usuario" />
-                    </label>
-
-                    <label>
-                        co" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="fas" data-icon="key" class="svg-inline--fa fa-key fa-w-16" viewBox="0 0 512 512">
-                            <path fill="#464646" d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z"/>
-                        </svg>
-                        <input name="password" type="password" id= "pass" placeholder="*******" />
-                    </label>
-
-                    <input id="boton-submit" type="submit" value="Conectarse" />
-
-                    <button id="boton-option" type="button" class="primary-button" onclick="button_option()">
-                        Ver opci&oacuten anterior
-                    </button>
-
-                </form>
-                <p class="info bt">Wifi otorgado por Yumka'</p>
-
-            </div>
-        </div>
-    </div>
--->
-
-<!-- Desing-1 -->
-<!-- <div class="wrapper">    
-    <div class="r2"></div> 
-    <div class="r1">
-        <div class="item">
-            <div>
-                <span class="material-symbols-outlined">
-                    wifi
-                </span>
-            </div>
-            <div class="yumka_blanco"></div>
-            <div>
-                <span class="material-symbols-outlined">
-                    apps
-                </span>
-            </div>
-        </div>      
-    </div>     
-    <div class="r3">         
-        <span>
-            BIENVENIDOS            
-        </span>  
-        <span>
-            estas en el
-        </span> 
-        <span>
-            Área de Hemiciclo
-        </span>      
-    </div> 
-    <div class="r4"></div>
-    <div class="r5"></div> 
-    <div class="r6"></div>
-    <div class="r7"></div>
-    <div class="r8"></div>
-</div> -->
-
 <!-- Desing-2 -->
 <div class="wrapper">    
     <div class="r2"></div> 
@@ -250,10 +79,154 @@
     <div class="r7"></div>
     <div class="r8"></div>
     <div class="r9"></div>
-    <div class="r10"></div>
+    <div class="r10"><div><span id="animal">Jaguar</span></div></div>
     <div class="r11"></div>
 </div>
 
+<!-- acceso hoja de calculo google -->
+<p>Sheets API Quickstart</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <script type="text/javascript">
+      /* exported gapiLoaded */
+      /* exported gisLoaded */
+      /* exported handleAuthClick */
+      /* exported handleSignoutClick */
+
+      // TODO(developer): Set to client ID and API key from the Developer Console
+      const CLIENT_ID = '687788828511-i4e8o40ermlofhngnc0r3ggb9saipfv4.apps.googleusercontent.com';
+      const API_KEY = 'AIzaSyARdYutgc9opHx8T7TvoIx9maUEQzZxuxM';
+
+      // Discovery doc URL for APIs used by the quickstart
+      const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+      let tokenClient;
+      let gapiInited = false;
+      let gisInited = false;
+
+      document.getElementById('authorize_button').style.visibility = 'hidden';
+      document.getElementById('signout_button').style.visibility = 'hidden';
+
+      /**
+       * Callback after api.js is loaded.
+       */
+      function gapiLoaded() {
+        gapi.load('client', initializeGapiClient);
+      }
+
+      /**
+       * Callback after the API client is loaded. Loads the
+       * discovery doc to initialize the API.
+       */
+      async function initializeGapiClient() {
+        await gapi.client.init({
+          apiKey: API_KEY,
+          discoveryDocs: [DISCOVERY_DOC],
+        });
+        gapiInited = true;
+        maybeEnableButtons();
+      }
+
+      /**
+       * Callback after Google Identity Services are loaded.
+       */
+      function gisLoaded() {
+        tokenClient = google.accounts.oauth2.initTokenClient({
+          client_id: CLIENT_ID,
+          scope: SCOPES,
+          callback: '', // defined later
+        });
+        gisInited = true;
+        maybeEnableButtons();
+      }
+
+      /**
+       * Enables user interaction after all libraries are loaded.
+       */
+      function maybeEnableButtons() {
+        if (gapiInited && gisInited) {
+          document.getElementById('authorize_button').style.visibility = 'visible';
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick() {
+        tokenClient.callback = async (resp) => {
+          if (resp.error !== undefined) {
+            throw (resp);
+          }
+          document.getElementById('signout_button').style.visibility = 'visible';
+          document.getElementById('authorize_button').innerText = 'Refresh';
+          await listMajors();
+        };
+
+        if (gapi.client.getToken() === null) {
+          // Prompt the user to select a Google Account and ask for consent to share their data
+          // when establishing a new session.
+          tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+          // Skip display of account chooser and consent dialog for an existing session.
+          tokenClient.requestAccessToken({prompt: ''});
+        }
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick() {
+        const token = gapi.client.getToken();
+        if (token !== null) {
+          google.accounts.oauth2.revoke(token.access_token);
+          gapi.client.setToken('');
+          document.getElementById('content').innerText = '';
+          document.getElementById('authorize_button').innerText = 'Authorize';
+          document.getElementById('signout_button').style.visibility = 'hidden';
+        }
+      }
+
+      /**
+       * Print the names and majors of students in a sample spreadsheet:
+       * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+       */
+      async function listMajors() {
+        let response;
+        try {
+          // Fetch first 10 files
+          response = await gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+            range: 'Class Data!A2:E',
+          });
+        } catch (err) {
+          document.getElementById('content').innerText = err.message;
+          return;
+        }
+        const range = response.result;
+        if (!range || !range.values || range.values.length == 0) {
+          document.getElementById('content').innerText = 'No values found.';
+          return;
+        }
+        // Flatten to string to display
+        const output = range.values.reduce(
+            (str, row) => `${str}${row[0]}, ${row[4]}\n`,
+            'Name, Major:\n');
+        document.getElementById('content').innerText = output;
+      }
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+  </body>
 
 </body>
     <script src="./yumka.js"></script>

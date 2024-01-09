@@ -62,10 +62,8 @@ input[type=submit]:focus,input[type=submit]:hover{
 
 .r1{  
     grid-column: 1 / 11;
-    grid-row: 1 / 1;    
-    height: fit-content; 
+    grid-row: 1 / 1;   
 } 
-
 
 .item .material-symbols-outlined{
     font-size: 2rem;
@@ -73,21 +71,33 @@ input[type=submit]:focus,input[type=submit]:hover{
 
 .item{
     display: grid;     
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 3.5rem;
-    padding: 0.5rem 0.5rem 0 0.5rem; 
+    padding: 0.5rem 0.5rem 0 0.5rem;     
 }
 
 .item div:first-child div{
     font-size: var(--md);
     font-weight: 200;
     font-family: var(--font);    
-    padding: 0rem 0 0 0.5rem; 
+    padding: 0 0 0 0.5rem; 
 }
 
-.item div:first-child{    
-    padding: 0 0 0 0.5rem;  
-    display: flex;
+.item div:first-child{   
+}
+
+.item div:nth-child(2){    
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.logo-yumka{
+    background-image: url(/hotspot/img/letras_yumka_anp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 70%;
 }
 
 .item div:last-child{
